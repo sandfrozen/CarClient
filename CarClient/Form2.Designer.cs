@@ -70,6 +70,7 @@
             this.customerName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.reloadCars = new System.Windows.Forms.Button();
             this.summaryCost = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -92,7 +93,7 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.buttonNewRes = new System.Windows.Forms.Button();
             this.reservationLabel = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.savePdf = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -100,8 +101,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -161,6 +162,7 @@
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.savePdf);
             this.groupBox2.Controls.Add(this.removeButton);
             this.groupBox2.Controls.Add(this.editButton);
             this.groupBox2.Location = new System.Drawing.Point(296, 358);
@@ -174,7 +176,7 @@
             // 
             this.removeButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.removeButton.Location = new System.Drawing.Point(59, 86);
+            this.removeButton.Location = new System.Drawing.Point(59, 84);
             this.removeButton.Name = "removeButton";
             this.removeButton.Size = new System.Drawing.Size(168, 23);
             this.removeButton.TabIndex = 7;
@@ -186,7 +188,7 @@
             // 
             this.editButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.editButton.Location = new System.Drawing.Point(59, 37);
+            this.editButton.Location = new System.Drawing.Point(59, 55);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(168, 23);
             this.editButton.TabIndex = 6;
@@ -503,17 +505,17 @@
             // 
             // Fromdate
             // 
-            this.Fromdate.Text = "From date";
+            this.Fromdate.Text = "From day";
             this.Fromdate.Width = 120;
             // 
             // Todate
             // 
-            this.Todate.Text = "To date";
+            this.Todate.Text = "To day";
             this.Todate.Width = 120;
             // 
             // Cost
             // 
-            this.Cost.Text = "Cost";
+            this.Cost.Text = "Total Cost";
             this.Cost.Width = 95;
             // 
             // reservationsInfo
@@ -576,6 +578,19 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Car reservations";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox3.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.ErrorImage")));
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.InitialImage")));
+            this.pictureBox3.Location = new System.Drawing.Point(452, 64);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(130, 130);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 8;
+            this.pictureBox3.TabStop = false;
             // 
             // reloadCars
             // 
@@ -754,18 +769,15 @@
             this.reservationLabel.TabIndex = 0;
             this.reservationLabel.Text = "New Reservation:";
             // 
-            // pictureBox3
+            // savePdf
             // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox3.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.ErrorImage")));
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.InitialImage")));
-            this.pictureBox3.Location = new System.Drawing.Point(452, 64);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(130, 130);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 8;
-            this.pictureBox3.TabStop = false;
+            this.savePdf.Location = new System.Drawing.Point(59, 26);
+            this.savePdf.Name = "savePdf";
+            this.savePdf.Size = new System.Drawing.Size(168, 23);
+            this.savePdf.TabIndex = 8;
+            this.savePdf.Text = "Save PDF";
+            this.savePdf.UseVisualStyleBackColor = true;
+            this.savePdf.Click += new System.EventHandler(this.savePdf_Click);
             // 
             // Form2
             // 
@@ -786,9 +798,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -859,5 +871,6 @@
         private System.Windows.Forms.Button buttonGoToNewRes;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button savePdf;
     }
 }

@@ -9,3 +9,8 @@ C:\Users\tomek.buslowski\source\repos\CarClient\CarClient\obj\Debug\CarClient.ex
 C:\Users\tomek.buslowski\source\repos\CarClient\CarClient\obj\Debug\CarClient.pdb
 C:\Users\tomek.buslowski\source\repos\CarClient\CarClient\obj\Debug\CarClient.Form2.resources
 C:\Users\tomek.buslowski\source\repos\CarClient\CarClient\obj\Debug\CarClient.csprojResolveAssemblyReference.cache
+C:\Users\tomek.buslowski\source\repos\CarClient\CarClient\bin\Debug\itextsharp.dll
+C:\Users\tomek.buslowski\source\repos\CarClient\CarClient\bin\Debug\itextsharp.pdfa.dll
+C:\Users\tomek.buslowski\source\repos\CarClient\CarClient\bin\Debug\itextsharp.xtra.dll
+C:\Users\tomek.buslowski\source\repos\CarClient\CarClient\bin\Debug\itextsharp.xml
+C:\Users\tomek.buslowski\source\repos\CarClient\CarClient\obj\Debug\CarClient.csproj.CopyComplete

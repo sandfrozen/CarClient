@@ -9,6 +9,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.IO;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+
 namespace CarClient
 {
     public partial class Form2 : Form
@@ -125,7 +129,7 @@ namespace CarClient
 
             new Task(() => {
                 var bytes = service.downloadCarImage(car.id);
-                Image carImage = (Bitmap)((new ImageConverter()).ConvertFrom(bytes));
+                System.Drawing.Image carImage = (Bitmap)((new ImageConverter()).ConvertFrom(bytes));
                 pictureBox2.Image = carImage;
             }).Start();
             
@@ -252,7 +256,7 @@ namespace CarClient
 
             new Task(() => {  
                 var bytes = service.downloadCarImage(carId);
-                Image carImage = (Bitmap)((new ImageConverter()).ConvertFrom(bytes));
+                System.Drawing.Image carImage = (Bitmap)((new ImageConverter()).ConvertFrom(bytes));
                 pictureBox3.Image = carImage;
             }).Start();
         }
@@ -327,6 +331,22 @@ namespace CarClient
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void savePdf_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count == 0) return;
+            int resId = int.Parse(listView1.SelectedItems[0].SubItems[0].Text);
+
+            new Task(() => {
+                string name = "Reservation" + resId + ".pdf";
+
+                var bytes = service.downloadPdf(resId);
+                File.WriteAllBytes(name, bytes);
+
+                MessageBox.Show("Potwierdzenie rezerwacji zostło zapisane do plik: " + name);
+                System.Diagnostics.Process.Start(name);
+            }).Start();
         }
     }
 }

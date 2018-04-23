@@ -5,11 +5,86 @@
       <xsd:import schemaLocation="https://localhost:8181/WSuperCarRent/ClientService?xsd=1" namespace="http://interfaces.car/" />
     </xsd:schema>
   </types>
+  <message name="greet">
+    <part name="parameters" element="tns:greet" />
+  </message>
+  <message name="greetResponse">
+    <part name="parameters" element="tns:greetResponse" />
+  </message>
+  <message name="loginCustomer">
+    <part name="parameters" element="tns:loginCustomer" />
+  </message>
+  <message name="loginCustomerResponse">
+    <part name="parameters" element="tns:loginCustomerResponse" />
+  </message>
+  <message name="addAccount">
+    <part name="parameters" element="tns:addAccount" />
+  </message>
+  <message name="addAccountResponse">
+    <part name="parameters" element="tns:addAccountResponse" />
+  </message>
+  <message name="getCustomer">
+    <part name="parameters" element="tns:getCustomer" />
+  </message>
+  <message name="getCustomerResponse">
+    <part name="parameters" element="tns:getCustomerResponse" />
+  </message>
+  <message name="editAccount">
+    <part name="parameters" element="tns:editAccount" />
+  </message>
+  <message name="editAccountResponse">
+    <part name="parameters" element="tns:editAccountResponse" />
+  </message>
+  <message name="newReservation">
+    <part name="parameters" element="tns:newReservation" />
+  </message>
+  <message name="newReservationResponse">
+    <part name="parameters" element="tns:newReservationResponse" />
+  </message>
+  <message name="InvalidReservationDateException">
+    <part name="fault" element="tns:InvalidReservationDateException" />
+  </message>
+  <message name="editReservation">
+    <part name="parameters" element="tns:editReservation" />
+  </message>
+  <message name="editReservationResponse">
+    <part name="parameters" element="tns:editReservationResponse" />
+  </message>
+  <message name="getCar">
+    <part name="parameters" element="tns:getCar" />
+  </message>
+  <message name="getCarResponse">
+    <part name="parameters" element="tns:getCarResponse" />
+  </message>
   <message name="downloadCarImage">
     <part name="parameters" element="tns:downloadCarImage" />
   </message>
   <message name="downloadCarImageResponse">
     <part name="parameters" element="tns:downloadCarImageResponse" />
+  </message>
+  <message name="searchCars">
+    <part name="parameters" element="tns:searchCars" />
+  </message>
+  <message name="searchCarsResponse">
+    <part name="parameters" element="tns:searchCarsResponse" />
+  </message>
+  <message name="getReservation">
+    <part name="parameters" element="tns:getReservation" />
+  </message>
+  <message name="getReservationResponse">
+    <part name="parameters" element="tns:getReservationResponse" />
+  </message>
+  <message name="getCars">
+    <part name="parameters" element="tns:getCars" />
+  </message>
+  <message name="getCarsResponse">
+    <part name="parameters" element="tns:getCarsResponse" />
+  </message>
+  <message name="downloadPdf">
+    <part name="parameters" element="tns:downloadPdf" />
+  </message>
+  <message name="downloadPdfResponse">
+    <part name="parameters" element="tns:downloadPdfResponse" />
   </message>
   <message name="removeReservation">
     <part name="parameters" element="tns:removeReservation" />
@@ -29,137 +104,72 @@
   <message name="authenticateCustomerResponse">
     <part name="parameters" element="tns:authenticateCustomerResponse" />
   </message>
-  <message name="getCars">
-    <part name="parameters" element="tns:getCars" />
-  </message>
-  <message name="getCarsResponse">
-    <part name="parameters" element="tns:getCarsResponse" />
-  </message>
-  <message name="getReservation">
-    <part name="parameters" element="tns:getReservation" />
-  </message>
-  <message name="getReservationResponse">
-    <part name="parameters" element="tns:getReservationResponse" />
-  </message>
-  <message name="editReservation">
-    <part name="parameters" element="tns:editReservation" />
-  </message>
-  <message name="editReservationResponse">
-    <part name="parameters" element="tns:editReservationResponse" />
-  </message>
-  <message name="InvalidReservationDateException">
-    <part name="fault" element="tns:InvalidReservationDateException" />
-  </message>
-  <message name="searchCars">
-    <part name="parameters" element="tns:searchCars" />
-  </message>
-  <message name="searchCarsResponse">
-    <part name="parameters" element="tns:searchCarsResponse" />
-  </message>
-  <message name="getCustomer">
-    <part name="parameters" element="tns:getCustomer" />
-  </message>
-  <message name="getCustomerResponse">
-    <part name="parameters" element="tns:getCustomerResponse" />
-  </message>
-  <message name="getCar">
-    <part name="parameters" element="tns:getCar" />
-  </message>
-  <message name="getCarResponse">
-    <part name="parameters" element="tns:getCarResponse" />
-  </message>
-  <message name="newReservation">
-    <part name="parameters" element="tns:newReservation" />
-  </message>
-  <message name="newReservationResponse">
-    <part name="parameters" element="tns:newReservationResponse" />
-  </message>
-  <message name="addAccount">
-    <part name="parameters" element="tns:addAccount" />
-  </message>
-  <message name="addAccountResponse">
-    <part name="parameters" element="tns:addAccountResponse" />
-  </message>
-  <message name="editAccount">
-    <part name="parameters" element="tns:editAccount" />
-  </message>
-  <message name="editAccountResponse">
-    <part name="parameters" element="tns:editAccountResponse" />
-  </message>
-  <message name="loginCustomer">
-    <part name="parameters" element="tns:loginCustomer" />
-  </message>
-  <message name="loginCustomerResponse">
-    <part name="parameters" element="tns:loginCustomerResponse" />
-  </message>
-  <message name="greet">
-    <part name="parameters" element="tns:greet" />
-  </message>
-  <message name="greetResponse">
-    <part name="parameters" element="tns:greetResponse" />
-  </message>
   <portType name="ClientInterface">
-    <operation name="downloadCarImage">
-      <input xmlns:ns1="http://www.w3.org/2007/05/addressing/metadata" ns1:Action="http://interfaces.car/ClientInterface/downloadCarImageRequest" message="tns:downloadCarImage" />
-      <output xmlns:ns2="http://www.w3.org/2007/05/addressing/metadata" ns2:Action="http://interfaces.car/ClientInterface/downloadCarImageResponse" message="tns:downloadCarImageResponse" />
-    </operation>
-    <operation name="removeReservation">
-      <input xmlns:ns3="http://www.w3.org/2007/05/addressing/metadata" ns3:Action="http://interfaces.car/ClientInterface/removeReservationRequest" message="tns:removeReservation" />
-      <output xmlns:ns4="http://www.w3.org/2007/05/addressing/metadata" ns4:Action="http://interfaces.car/ClientInterface/removeReservationResponse" message="tns:removeReservationResponse" />
-    </operation>
-    <operation name="getCustomerReservations">
-      <input xmlns:ns5="http://www.w3.org/2007/05/addressing/metadata" ns5:Action="http://interfaces.car/ClientInterface/getCustomerReservationsRequest" message="tns:getCustomerReservations" />
-      <output xmlns:ns6="http://www.w3.org/2007/05/addressing/metadata" ns6:Action="http://interfaces.car/ClientInterface/getCustomerReservationsResponse" message="tns:getCustomerReservationsResponse" />
-    </operation>
-    <operation name="authenticateCustomer">
-      <input xmlns:ns7="http://www.w3.org/2007/05/addressing/metadata" ns7:Action="http://interfaces.car/ClientInterface/authenticateCustomerRequest" message="tns:authenticateCustomer" />
-      <output xmlns:ns8="http://www.w3.org/2007/05/addressing/metadata" ns8:Action="http://interfaces.car/ClientInterface/authenticateCustomerResponse" message="tns:authenticateCustomerResponse" />
-    </operation>
-    <operation name="getCars">
-      <input xmlns:ns9="http://www.w3.org/2007/05/addressing/metadata" ns9:Action="http://interfaces.car/ClientInterface/getCarsRequest" message="tns:getCars" />
-      <output xmlns:ns10="http://www.w3.org/2007/05/addressing/metadata" ns10:Action="http://interfaces.car/ClientInterface/getCarsResponse" message="tns:getCarsResponse" />
-    </operation>
-    <operation name="getReservation">
-      <input xmlns:ns11="http://www.w3.org/2007/05/addressing/metadata" ns11:Action="http://interfaces.car/ClientInterface/getReservationRequest" message="tns:getReservation" />
-      <output xmlns:ns12="http://www.w3.org/2007/05/addressing/metadata" ns12:Action="http://interfaces.car/ClientInterface/getReservationResponse" message="tns:getReservationResponse" />
-    </operation>
-    <operation name="editReservation">
-      <input xmlns:ns13="http://www.w3.org/2007/05/addressing/metadata" ns13:Action="http://interfaces.car/ClientInterface/editReservationRequest" message="tns:editReservation" />
-      <output xmlns:ns14="http://www.w3.org/2007/05/addressing/metadata" ns14:Action="http://interfaces.car/ClientInterface/editReservationResponse" message="tns:editReservationResponse" />
-      <fault xmlns:ns15="http://www.w3.org/2007/05/addressing/metadata" ns15:Action="http://interfaces.car/ClientInterface/editReservation/Fault/InvalidReservationDateException" name="InvalidReservationDateException" message="tns:InvalidReservationDateException" />
-    </operation>
-    <operation name="searchCars">
-      <input xmlns:ns16="http://www.w3.org/2007/05/addressing/metadata" ns16:Action="http://interfaces.car/ClientInterface/searchCarsRequest" message="tns:searchCars" />
-      <output xmlns:ns17="http://www.w3.org/2007/05/addressing/metadata" ns17:Action="http://interfaces.car/ClientInterface/searchCarsResponse" message="tns:searchCarsResponse" />
-    </operation>
-    <operation name="getCustomer">
-      <input xmlns:ns18="http://www.w3.org/2007/05/addressing/metadata" ns18:Action="http://interfaces.car/ClientInterface/getCustomerRequest" message="tns:getCustomer" />
-      <output xmlns:ns19="http://www.w3.org/2007/05/addressing/metadata" ns19:Action="http://interfaces.car/ClientInterface/getCustomerResponse" message="tns:getCustomerResponse" />
-    </operation>
-    <operation name="getCar">
-      <input xmlns:ns20="http://www.w3.org/2007/05/addressing/metadata" ns20:Action="http://interfaces.car/ClientInterface/getCarRequest" message="tns:getCar" />
-      <output xmlns:ns21="http://www.w3.org/2007/05/addressing/metadata" ns21:Action="http://interfaces.car/ClientInterface/getCarResponse" message="tns:getCarResponse" />
-    </operation>
-    <operation name="newReservation">
-      <input xmlns:ns22="http://www.w3.org/2007/05/addressing/metadata" ns22:Action="http://interfaces.car/ClientInterface/newReservationRequest" message="tns:newReservation" />
-      <output xmlns:ns23="http://www.w3.org/2007/05/addressing/metadata" ns23:Action="http://interfaces.car/ClientInterface/newReservationResponse" message="tns:newReservationResponse" />
-      <fault xmlns:ns24="http://www.w3.org/2007/05/addressing/metadata" ns24:Action="http://interfaces.car/ClientInterface/newReservation/Fault/InvalidReservationDateException" name="InvalidReservationDateException" message="tns:InvalidReservationDateException" />
-    </operation>
-    <operation name="addAccount">
-      <input xmlns:ns25="http://www.w3.org/2007/05/addressing/metadata" ns25:Action="http://interfaces.car/ClientInterface/addAccountRequest" message="tns:addAccount" />
-      <output xmlns:ns26="http://www.w3.org/2007/05/addressing/metadata" ns26:Action="http://interfaces.car/ClientInterface/addAccountResponse" message="tns:addAccountResponse" />
-    </operation>
-    <operation name="editAccount">
-      <input xmlns:ns27="http://www.w3.org/2007/05/addressing/metadata" ns27:Action="http://interfaces.car/ClientInterface/editAccountRequest" message="tns:editAccount" />
-      <output xmlns:ns28="http://www.w3.org/2007/05/addressing/metadata" ns28:Action="http://interfaces.car/ClientInterface/editAccountResponse" message="tns:editAccountResponse" />
+    <operation name="greet">
+      <input xmlns:ns1="http://www.w3.org/2007/05/addressing/metadata" ns1:Action="http://interfaces.car/ClientInterface/greetRequest" message="tns:greet" />
+      <output xmlns:ns2="http://www.w3.org/2007/05/addressing/metadata" ns2:Action="http://interfaces.car/ClientInterface/greetResponse" message="tns:greetResponse" />
     </operation>
     <operation name="loginCustomer">
-      <input xmlns:ns29="http://www.w3.org/2007/05/addressing/metadata" ns29:Action="http://interfaces.car/ClientInterface/loginCustomerRequest" message="tns:loginCustomer" />
-      <output xmlns:ns30="http://www.w3.org/2007/05/addressing/metadata" ns30:Action="http://interfaces.car/ClientInterface/loginCustomerResponse" message="tns:loginCustomerResponse" />
+      <input xmlns:ns3="http://www.w3.org/2007/05/addressing/metadata" ns3:Action="http://interfaces.car/ClientInterface/loginCustomerRequest" message="tns:loginCustomer" />
+      <output xmlns:ns4="http://www.w3.org/2007/05/addressing/metadata" ns4:Action="http://interfaces.car/ClientInterface/loginCustomerResponse" message="tns:loginCustomerResponse" />
     </operation>
-    <operation name="greet">
-      <input xmlns:ns31="http://www.w3.org/2007/05/addressing/metadata" ns31:Action="http://interfaces.car/ClientInterface/greetRequest" message="tns:greet" />
-      <output xmlns:ns32="http://www.w3.org/2007/05/addressing/metadata" ns32:Action="http://interfaces.car/ClientInterface/greetResponse" message="tns:greetResponse" />
+    <operation name="addAccount">
+      <input xmlns:ns5="http://www.w3.org/2007/05/addressing/metadata" ns5:Action="http://interfaces.car/ClientInterface/addAccountRequest" message="tns:addAccount" />
+      <output xmlns:ns6="http://www.w3.org/2007/05/addressing/metadata" ns6:Action="http://interfaces.car/ClientInterface/addAccountResponse" message="tns:addAccountResponse" />
+    </operation>
+    <operation name="getCustomer">
+      <input xmlns:ns7="http://www.w3.org/2007/05/addressing/metadata" ns7:Action="http://interfaces.car/ClientInterface/getCustomerRequest" message="tns:getCustomer" />
+      <output xmlns:ns8="http://www.w3.org/2007/05/addressing/metadata" ns8:Action="http://interfaces.car/ClientInterface/getCustomerResponse" message="tns:getCustomerResponse" />
+    </operation>
+    <operation name="editAccount">
+      <input xmlns:ns9="http://www.w3.org/2007/05/addressing/metadata" ns9:Action="http://interfaces.car/ClientInterface/editAccountRequest" message="tns:editAccount" />
+      <output xmlns:ns10="http://www.w3.org/2007/05/addressing/metadata" ns10:Action="http://interfaces.car/ClientInterface/editAccountResponse" message="tns:editAccountResponse" />
+    </operation>
+    <operation name="newReservation">
+      <input xmlns:ns11="http://www.w3.org/2007/05/addressing/metadata" ns11:Action="http://interfaces.car/ClientInterface/newReservationRequest" message="tns:newReservation" />
+      <output xmlns:ns12="http://www.w3.org/2007/05/addressing/metadata" ns12:Action="http://interfaces.car/ClientInterface/newReservationResponse" message="tns:newReservationResponse" />
+      <fault xmlns:ns13="http://www.w3.org/2007/05/addressing/metadata" ns13:Action="http://interfaces.car/ClientInterface/newReservation/Fault/InvalidReservationDateException" name="InvalidReservationDateException" message="tns:InvalidReservationDateException" />
+    </operation>
+    <operation name="editReservation">
+      <input xmlns:ns14="http://www.w3.org/2007/05/addressing/metadata" ns14:Action="http://interfaces.car/ClientInterface/editReservationRequest" message="tns:editReservation" />
+      <output xmlns:ns15="http://www.w3.org/2007/05/addressing/metadata" ns15:Action="http://interfaces.car/ClientInterface/editReservationResponse" message="tns:editReservationResponse" />
+      <fault xmlns:ns16="http://www.w3.org/2007/05/addressing/metadata" ns16:Action="http://interfaces.car/ClientInterface/editReservation/Fault/InvalidReservationDateException" name="InvalidReservationDateException" message="tns:InvalidReservationDateException" />
+    </operation>
+    <operation name="getCar">
+      <input xmlns:ns17="http://www.w3.org/2007/05/addressing/metadata" ns17:Action="http://interfaces.car/ClientInterface/getCarRequest" message="tns:getCar" />
+      <output xmlns:ns18="http://www.w3.org/2007/05/addressing/metadata" ns18:Action="http://interfaces.car/ClientInterface/getCarResponse" message="tns:getCarResponse" />
+    </operation>
+    <operation name="downloadCarImage">
+      <input xmlns:ns19="http://www.w3.org/2007/05/addressing/metadata" ns19:Action="http://interfaces.car/ClientInterface/downloadCarImageRequest" message="tns:downloadCarImage" />
+      <output xmlns:ns20="http://www.w3.org/2007/05/addressing/metadata" ns20:Action="http://interfaces.car/ClientInterface/downloadCarImageResponse" message="tns:downloadCarImageResponse" />
+    </operation>
+    <operation name="searchCars">
+      <input xmlns:ns21="http://www.w3.org/2007/05/addressing/metadata" ns21:Action="http://interfaces.car/ClientInterface/searchCarsRequest" message="tns:searchCars" />
+      <output xmlns:ns22="http://www.w3.org/2007/05/addressing/metadata" ns22:Action="http://interfaces.car/ClientInterface/searchCarsResponse" message="tns:searchCarsResponse" />
+    </operation>
+    <operation name="getReservation">
+      <input xmlns:ns23="http://www.w3.org/2007/05/addressing/metadata" ns23:Action="http://interfaces.car/ClientInterface/getReservationRequest" message="tns:getReservation" />
+      <output xmlns:ns24="http://www.w3.org/2007/05/addressing/metadata" ns24:Action="http://interfaces.car/ClientInterface/getReservationResponse" message="tns:getReservationResponse" />
+    </operation>
+    <operation name="getCars">
+      <input xmlns:ns25="http://www.w3.org/2007/05/addressing/metadata" ns25:Action="http://interfaces.car/ClientInterface/getCarsRequest" message="tns:getCars" />
+      <output xmlns:ns26="http://www.w3.org/2007/05/addressing/metadata" ns26:Action="http://interfaces.car/ClientInterface/getCarsResponse" message="tns:getCarsResponse" />
+    </operation>
+    <operation name="downloadPdf">
+      <input xmlns:ns27="http://www.w3.org/2007/05/addressing/metadata" ns27:Action="http://interfaces.car/ClientInterface/downloadPdfRequest" message="tns:downloadPdf" />
+      <output xmlns:ns28="http://www.w3.org/2007/05/addressing/metadata" ns28:Action="http://interfaces.car/ClientInterface/downloadPdfResponse" message="tns:downloadPdfResponse" />
+    </operation>
+    <operation name="removeReservation">
+      <input xmlns:ns29="http://www.w3.org/2007/05/addressing/metadata" ns29:Action="http://interfaces.car/ClientInterface/removeReservationRequest" message="tns:removeReservation" />
+      <output xmlns:ns30="http://www.w3.org/2007/05/addressing/metadata" ns30:Action="http://interfaces.car/ClientInterface/removeReservationResponse" message="tns:removeReservationResponse" />
+    </operation>
+    <operation name="getCustomerReservations">
+      <input xmlns:ns31="http://www.w3.org/2007/05/addressing/metadata" ns31:Action="http://interfaces.car/ClientInterface/getCustomerReservationsRequest" message="tns:getCustomerReservations" />
+      <output xmlns:ns32="http://www.w3.org/2007/05/addressing/metadata" ns32:Action="http://interfaces.car/ClientInterface/getCustomerReservationsResponse" message="tns:getCustomerReservationsResponse" />
+    </operation>
+    <operation name="authenticateCustomer">
+      <input xmlns:ns33="http://www.w3.org/2007/05/addressing/metadata" ns33:Action="http://interfaces.car/ClientInterface/authenticateCustomerRequest" message="tns:authenticateCustomer" />
+      <output xmlns:ns34="http://www.w3.org/2007/05/addressing/metadata" ns34:Action="http://interfaces.car/ClientInterface/authenticateCustomerResponse" message="tns:authenticateCustomerResponse" />
     </operation>
   </portType>
 </definitions>

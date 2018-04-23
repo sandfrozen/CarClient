@@ -7,6 +7,8 @@
   <xs:element name="authenticateCustomerResponse" type="tns:authenticateCustomerResponse" />
   <xs:element name="downloadCarImage" type="tns:downloadCarImage" />
   <xs:element name="downloadCarImageResponse" type="tns:downloadCarImageResponse" />
+  <xs:element name="downloadPdf" type="tns:downloadPdf" />
+  <xs:element name="downloadPdfResponse" type="tns:downloadPdfResponse" />
   <xs:element name="editAccount" type="tns:editAccount" />
   <xs:element name="editAccountResponse" type="tns:editAccountResponse" />
   <xs:element name="editReservation" type="tns:editReservation" />
@@ -31,6 +33,17 @@
   <xs:element name="removeReservationResponse" type="tns:removeReservationResponse" />
   <xs:element name="searchCars" type="tns:searchCars" />
   <xs:element name="searchCarsResponse" type="tns:searchCarsResponse" />
+  <xs:complexType name="loginCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="loginCustomerResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="editAccount">
     <xs:sequence>
       <xs:element minOccurs="0" name="arg0" type="tns:customer" />
@@ -48,27 +61,6 @@
   <xs:complexType name="editAccountResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:boolean" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="loginCustomer">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="arg0" type="xs:string" />
-      <xs:element minOccurs="0" name="arg1" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="loginCustomerResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="downloadCarImage">
-    <xs:sequence>
-      <xs:element name="arg0" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="downloadCarImageResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="xs:base64Binary" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="getCar">
@@ -94,6 +86,16 @@
       <xs:element name="gears" type="xs:int" />
       <xs:element name="dayCost" type="xs:float" />
       <xs:element minOccurs="0" name="imageUrl" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="downloadCarImage">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="downloadCarImageResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:base64Binary" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="searchCars">
@@ -134,6 +136,19 @@
       <xs:element minOccurs="0" name="to" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="addAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+      <xs:element minOccurs="0" name="arg3" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addAccountResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="newReservation">
     <xs:sequence>
       <xs:element name="arg0" type="xs:int" />
@@ -153,19 +168,6 @@
       <xs:element minOccurs="0" name="message" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="addAccount">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="arg0" type="xs:string" />
-      <xs:element minOccurs="0" name="arg1" type="xs:string" />
-      <xs:element minOccurs="0" name="arg2" type="xs:string" />
-      <xs:element minOccurs="0" name="arg3" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="addAccountResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:boolean" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="getCustomerReservations">
     <xs:sequence>
       <xs:element name="arg0" type="xs:int" />
@@ -174,6 +176,16 @@
   <xs:complexType name="getCustomerReservationsResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:reservation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="downloadPdf">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="downloadPdfResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" nillable="true" type="xs:base64Binary" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="greet">
@@ -216,14 +228,6 @@
       <xs:element name="return" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="authenticateCustomer">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="authenticateCustomerResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:boolean" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="getCustomer">
     <xs:sequence>
       <xs:element name="arg0" type="xs:int" />
@@ -232,6 +236,14 @@
   <xs:complexType name="getCustomerResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:customer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="authenticateCustomer">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="authenticateCustomerResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
 </xs:schema>

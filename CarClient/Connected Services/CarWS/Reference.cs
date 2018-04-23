@@ -63,6 +63,498 @@ namespace CarClient.CarWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://interfaces.car/")]
+    public partial class customer : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int idField;
+        
+        private string nameField;
+        
+        private string surnameField;
+        
+        private string mailField;
+        
+        private string passwordField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("id");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public string surname {
+            get {
+                return this.surnameField;
+            }
+            set {
+                this.surnameField = value;
+                this.RaisePropertyChanged("surname");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public string mail {
+            get {
+                return this.mailField;
+            }
+            set {
+                this.mailField = value;
+                this.RaisePropertyChanged("mail");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public string password {
+            get {
+                return this.passwordField;
+            }
+            set {
+                this.passwordField = value;
+                this.RaisePropertyChanged("password");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://interfaces.car/", ConfigurationName="CarWS.ClientInterface")]
+    public interface ClientInterface {
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://interfaces.car/ClientInterface/greetRequest", ReplyAction="http://interfaces.car/ClientInterface/greetResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        CarClient.CarWS.greetResponse greet(CarClient.CarWS.greetRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://interfaces.car/ClientInterface/loginCustomerRequest", ReplyAction="http://interfaces.car/ClientInterface/loginCustomerResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        CarClient.CarWS.loginCustomerResponse loginCustomer(CarClient.CarWS.loginCustomerRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://interfaces.car/ClientInterface/addAccountRequest", ReplyAction="http://interfaces.car/ClientInterface/addAccountResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        CarClient.CarWS.addAccountResponse addAccount(CarClient.CarWS.addAccountRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://interfaces.car/ClientInterface/getCustomerRequest", ReplyAction="http://interfaces.car/ClientInterface/getCustomerResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        CarClient.CarWS.getCustomerResponse getCustomer(CarClient.CarWS.getCustomerRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://interfaces.car/ClientInterface/editAccountRequest", ReplyAction="http://interfaces.car/ClientInterface/editAccountResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        CarClient.CarWS.editAccountResponse editAccount(CarClient.CarWS.editAccountRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://interfaces.car/ClientInterface/newReservationRequest", ReplyAction="http://interfaces.car/ClientInterface/newReservationResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(CarClient.CarWS.InvalidReservationDateException), Action="http://interfaces.car/ClientInterface/newReservation/Fault/InvalidReservationDate" +
+            "Exception", Name="InvalidReservationDateException")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        CarClient.CarWS.newReservationResponse newReservation(CarClient.CarWS.newReservationRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://interfaces.car/ClientInterface/editReservationRequest", ReplyAction="http://interfaces.car/ClientInterface/editReservationResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(CarClient.CarWS.InvalidReservationDateException), Action="http://interfaces.car/ClientInterface/editReservation/Fault/InvalidReservationDat" +
+            "eException", Name="InvalidReservationDateException")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        CarClient.CarWS.editReservationResponse editReservation(CarClient.CarWS.editReservationRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://interfaces.car/ClientInterface/getCarRequest", ReplyAction="http://interfaces.car/ClientInterface/getCarResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        CarClient.CarWS.getCarResponse getCar(CarClient.CarWS.getCarRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://interfaces.car/ClientInterface/downloadCarImageRequest", ReplyAction="http://interfaces.car/ClientInterface/downloadCarImageResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        CarClient.CarWS.downloadCarImageResponse downloadCarImage(CarClient.CarWS.downloadCarImageRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://interfaces.car/ClientInterface/searchCarsRequest", ReplyAction="http://interfaces.car/ClientInterface/searchCarsResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        CarClient.CarWS.searchCarsResponse searchCars(CarClient.CarWS.searchCarsRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://interfaces.car/ClientInterface/getReservationRequest", ReplyAction="http://interfaces.car/ClientInterface/getReservationResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        CarClient.CarWS.getReservationResponse getReservation(CarClient.CarWS.getReservationRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://interfaces.car/ClientInterface/getCarsRequest", ReplyAction="http://interfaces.car/ClientInterface/getCarsResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        CarClient.CarWS.getCarsResponse getCars(CarClient.CarWS.getCarsRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://interfaces.car/ClientInterface/downloadPdfRequest", ReplyAction="http://interfaces.car/ClientInterface/downloadPdfResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        CarClient.CarWS.downloadPdfResponse downloadPdf(CarClient.CarWS.downloadPdfRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://interfaces.car/ClientInterface/removeReservationRequest", ReplyAction="http://interfaces.car/ClientInterface/removeReservationResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        CarClient.CarWS.removeReservationResponse removeReservation(CarClient.CarWS.removeReservationRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://interfaces.car/ClientInterface/getCustomerReservationsRequest", ReplyAction="http://interfaces.car/ClientInterface/getCustomerReservationsResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        CarClient.CarWS.getCustomerReservationsResponse getCustomerReservations(CarClient.CarWS.getCustomerReservationsRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://interfaces.car/ClientInterface/authenticateCustomerRequest", ReplyAction="http://interfaces.car/ClientInterface/authenticateCustomerResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        CarClient.CarWS.authenticateCustomerResponse authenticateCustomer(CarClient.CarWS.authenticateCustomerRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="greet", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
+    public partial class greetRequest {
+        
+        public greetRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="greetResponse", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
+    public partial class greetResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string @return;
+        
+        public greetResponse() {
+        }
+        
+        public greetResponse(string @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="loginCustomer", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
+    public partial class loginCustomerRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg0;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg1;
+        
+        public loginCustomerRequest() {
+        }
+        
+        public loginCustomerRequest(string arg0, string arg1) {
+            this.arg0 = arg0;
+            this.arg1 = arg1;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="loginCustomerResponse", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
+    public partial class loginCustomerResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public loginCustomerResponse() {
+        }
+        
+        public loginCustomerResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="addAccount", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
+    public partial class addAccountRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg0;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg1;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg2;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg3;
+        
+        public addAccountRequest() {
+        }
+        
+        public addAccountRequest(string arg0, string arg1, string arg2, string arg3) {
+            this.arg0 = arg0;
+            this.arg1 = arg1;
+            this.arg2 = arg2;
+            this.arg3 = arg3;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="addAccountResponse", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
+    public partial class addAccountResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool @return;
+        
+        public addAccountResponse() {
+        }
+        
+        public addAccountResponse(bool @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getCustomer", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
+    public partial class getCustomerRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int arg0;
+        
+        public getCustomerRequest() {
+        }
+        
+        public getCustomerRequest(int arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getCustomerResponse", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
+    public partial class getCustomerResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public CarClient.CarWS.customer @return;
+        
+        public getCustomerResponse() {
+        }
+        
+        public getCustomerResponse(CarClient.CarWS.customer @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="editAccount", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
+    public partial class editAccountRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public CarClient.CarWS.customer arg0;
+        
+        public editAccountRequest() {
+        }
+        
+        public editAccountRequest(CarClient.CarWS.customer arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="editAccountResponse", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
+    public partial class editAccountResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool @return;
+        
+        public editAccountResponse() {
+        }
+        
+        public editAccountResponse(bool @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="newReservation", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
+    public partial class newReservationRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int arg0;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int arg1;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg2;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg3;
+        
+        public newReservationRequest() {
+        }
+        
+        public newReservationRequest(int arg0, int arg1, string arg2, string arg3) {
+            this.arg0 = arg0;
+            this.arg1 = arg1;
+            this.arg2 = arg2;
+            this.arg3 = arg3;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="newReservationResponse", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
+    public partial class newReservationResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool @return;
+        
+        public newReservationResponse() {
+        }
+        
+        public newReservationResponse(bool @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="editReservation", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
+    public partial class editReservationRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int arg0;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int arg1;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int arg2;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg3;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg4;
+        
+        public editReservationRequest() {
+        }
+        
+        public editReservationRequest(int arg0, int arg1, int arg2, string arg3, string arg4) {
+            this.arg0 = arg0;
+            this.arg1 = arg1;
+            this.arg2 = arg2;
+            this.arg3 = arg3;
+            this.arg4 = arg4;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="editReservationResponse", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
+    public partial class editReservationResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool @return;
+        
+        public editReservationResponse() {
+        }
+        
+        public editReservationResponse(bool @return) {
+            this.@return = @return;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://interfaces.car/")]
     public partial class car : object, System.ComponentModel.INotifyPropertyChanged {
         
         private int idField;
@@ -229,6 +721,159 @@ namespace CarClient.CarWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getCar", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
+    public partial class getCarRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int arg0;
+        
+        public getCarRequest() {
+        }
+        
+        public getCarRequest(int arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getCarResponse", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
+    public partial class getCarResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public CarClient.CarWS.car @return;
+        
+        public getCarResponse() {
+        }
+        
+        public getCarResponse(CarClient.CarWS.car @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="downloadCarImage", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
+    public partial class downloadCarImageRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int arg0;
+        
+        public downloadCarImageRequest() {
+        }
+        
+        public downloadCarImageRequest(int arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="downloadCarImageResponse", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
+    public partial class downloadCarImageResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="base64Binary")]
+        public byte[] @return;
+        
+        public downloadCarImageResponse() {
+        }
+        
+        public downloadCarImageResponse(byte[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="searchCars", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
+    public partial class searchCarsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg0;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg1;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int arg2;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg3;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int arg4;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg5;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int arg6;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=7)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg7;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=8)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int arg8;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=9)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int arg9;
+        
+        public searchCarsRequest() {
+        }
+        
+        public searchCarsRequest(string arg0, string arg1, int arg2, string arg3, int arg4, string arg5, int arg6, string arg7, int arg8, int arg9) {
+            this.arg0 = arg0;
+            this.arg1 = arg1;
+            this.arg2 = arg2;
+            this.arg3 = arg3;
+            this.arg4 = arg4;
+            this.arg5 = arg5;
+            this.arg6 = arg6;
+            this.arg7 = arg7;
+            this.arg8 = arg8;
+            this.arg9 = arg9;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="searchCarsResponse", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
+    public partial class searchCarsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public CarClient.CarWS.car[] @return;
+        
+        public searchCarsResponse() {
+        }
+        
+        public searchCarsResponse(CarClient.CarWS.car[] @return) {
+            this.@return = @return;
+        }
+    }
+    
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
@@ -317,119 +962,20 @@ namespace CarClient.CarWS {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://interfaces.car/", ConfigurationName="CarWS.ClientInterface")]
-    public interface ClientInterface {
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://interfaces.car/ClientInterface/downloadCarImageRequest", ReplyAction="http://interfaces.car/ClientInterface/downloadCarImageResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        CarClient.CarWS.downloadCarImageResponse downloadCarImage(CarClient.CarWS.downloadCarImageRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://interfaces.car/ClientInterface/removeReservationRequest", ReplyAction="http://interfaces.car/ClientInterface/removeReservationResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        CarClient.CarWS.removeReservationResponse removeReservation(CarClient.CarWS.removeReservationRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://interfaces.car/ClientInterface/getCustomerReservationsRequest", ReplyAction="http://interfaces.car/ClientInterface/getCustomerReservationsResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        CarClient.CarWS.getCustomerReservationsResponse getCustomerReservations(CarClient.CarWS.getCustomerReservationsRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://interfaces.car/ClientInterface/authenticateCustomerRequest", ReplyAction="http://interfaces.car/ClientInterface/authenticateCustomerResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        CarClient.CarWS.authenticateCustomerResponse authenticateCustomer(CarClient.CarWS.authenticateCustomerRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://interfaces.car/ClientInterface/getCarsRequest", ReplyAction="http://interfaces.car/ClientInterface/getCarsResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        CarClient.CarWS.getCarsResponse getCars(CarClient.CarWS.getCarsRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://interfaces.car/ClientInterface/getReservationRequest", ReplyAction="http://interfaces.car/ClientInterface/getReservationResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        CarClient.CarWS.getReservationResponse getReservation(CarClient.CarWS.getReservationRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://interfaces.car/ClientInterface/editReservationRequest", ReplyAction="http://interfaces.car/ClientInterface/editReservationResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(CarClient.CarWS.InvalidReservationDateException), Action="http://interfaces.car/ClientInterface/editReservation/Fault/InvalidReservationDat" +
-            "eException", Name="InvalidReservationDateException")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        CarClient.CarWS.editReservationResponse editReservation(CarClient.CarWS.editReservationRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://interfaces.car/ClientInterface/searchCarsRequest", ReplyAction="http://interfaces.car/ClientInterface/searchCarsResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        CarClient.CarWS.searchCarsResponse searchCars(CarClient.CarWS.searchCarsRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://interfaces.car/ClientInterface/getCustomerRequest", ReplyAction="http://interfaces.car/ClientInterface/getCustomerResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        CarClient.CarWS.getCustomerResponse getCustomer(CarClient.CarWS.getCustomerRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://interfaces.car/ClientInterface/getCarRequest", ReplyAction="http://interfaces.car/ClientInterface/getCarResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        CarClient.CarWS.getCarResponse getCar(CarClient.CarWS.getCarRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://interfaces.car/ClientInterface/newReservationRequest", ReplyAction="http://interfaces.car/ClientInterface/newReservationResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(CarClient.CarWS.InvalidReservationDateException), Action="http://interfaces.car/ClientInterface/newReservation/Fault/InvalidReservationDate" +
-            "Exception", Name="InvalidReservationDateException")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        CarClient.CarWS.newReservationResponse newReservation(CarClient.CarWS.newReservationRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://interfaces.car/ClientInterface/addAccountRequest", ReplyAction="http://interfaces.car/ClientInterface/addAccountResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        CarClient.CarWS.addAccountResponse addAccount(CarClient.CarWS.addAccountRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://interfaces.car/ClientInterface/editAccountRequest", ReplyAction="http://interfaces.car/ClientInterface/editAccountResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        CarClient.CarWS.editAccountResponse editAccount(CarClient.CarWS.editAccountRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://interfaces.car/ClientInterface/loginCustomerRequest", ReplyAction="http://interfaces.car/ClientInterface/loginCustomerResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        CarClient.CarWS.loginCustomerResponse loginCustomer(CarClient.CarWS.loginCustomerRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://interfaces.car/ClientInterface/greetRequest", ReplyAction="http://interfaces.car/ClientInterface/greetResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        CarClient.CarWS.greetResponse greet(CarClient.CarWS.greetRequest request);
-    }
-    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="downloadCarImage", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
-    public partial class downloadCarImageRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getReservation", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
+    public partial class getReservationRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int arg0;
         
-        public downloadCarImageRequest() {
+        public getReservationRequest() {
         }
         
-        public downloadCarImageRequest(int arg0) {
+        public getReservationRequest(int arg0) {
             this.arg0 = arg0;
         }
     }
@@ -437,17 +983,81 @@ namespace CarClient.CarWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="downloadCarImageResponse", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
-    public partial class downloadCarImageResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getReservationResponse", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
+    public partial class getReservationResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="base64Binary")]
-        public byte[] @return;
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public CarClient.CarWS.reservation @return;
         
-        public downloadCarImageResponse() {
+        public getReservationResponse() {
         }
         
-        public downloadCarImageResponse(byte[] @return) {
+        public getReservationResponse(CarClient.CarWS.reservation @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getCars", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
+    public partial class getCarsRequest {
+        
+        public getCarsRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getCarsResponse", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
+    public partial class getCarsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public CarClient.CarWS.car[] @return;
+        
+        public getCarsResponse() {
+        }
+        
+        public getCarsResponse(CarClient.CarWS.car[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="downloadPdf", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
+    public partial class downloadPdfRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int arg0;
+        
+        public downloadPdfRequest() {
+        }
+        
+        public downloadPdfRequest(int arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="downloadPdfResponse", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
+    public partial class downloadPdfResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="base64Binary", IsNullable=true)]
+        public byte[] @return;
+        
+        public downloadPdfResponse() {
+        }
+        
+        public downloadPdfResponse(byte[] @return) {
             this.@return = @return;
         }
     }
@@ -552,574 +1162,6 @@ namespace CarClient.CarWS {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getCars", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
-    public partial class getCarsRequest {
-        
-        public getCarsRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getCarsResponse", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
-    public partial class getCarsResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public CarClient.CarWS.car[] @return;
-        
-        public getCarsResponse() {
-        }
-        
-        public getCarsResponse(CarClient.CarWS.car[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getReservation", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
-    public partial class getReservationRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int arg0;
-        
-        public getReservationRequest() {
-        }
-        
-        public getReservationRequest(int arg0) {
-            this.arg0 = arg0;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getReservationResponse", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
-    public partial class getReservationResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public CarClient.CarWS.reservation @return;
-        
-        public getReservationResponse() {
-        }
-        
-        public getReservationResponse(CarClient.CarWS.reservation @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="editReservation", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
-    public partial class editReservationRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int arg0;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int arg1;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int arg2;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=3)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg3;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=4)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg4;
-        
-        public editReservationRequest() {
-        }
-        
-        public editReservationRequest(int arg0, int arg1, int arg2, string arg3, string arg4) {
-            this.arg0 = arg0;
-            this.arg1 = arg1;
-            this.arg2 = arg2;
-            this.arg3 = arg3;
-            this.arg4 = arg4;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="editReservationResponse", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
-    public partial class editReservationResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public bool @return;
-        
-        public editReservationResponse() {
-        }
-        
-        public editReservationResponse(bool @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="searchCars", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
-    public partial class searchCarsRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg0;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg1;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int arg2;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=3)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg3;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=4)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int arg4;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=5)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg5;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=6)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int arg6;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=7)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg7;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=8)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int arg8;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=9)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int arg9;
-        
-        public searchCarsRequest() {
-        }
-        
-        public searchCarsRequest(string arg0, string arg1, int arg2, string arg3, int arg4, string arg5, int arg6, string arg7, int arg8, int arg9) {
-            this.arg0 = arg0;
-            this.arg1 = arg1;
-            this.arg2 = arg2;
-            this.arg3 = arg3;
-            this.arg4 = arg4;
-            this.arg5 = arg5;
-            this.arg6 = arg6;
-            this.arg7 = arg7;
-            this.arg8 = arg8;
-            this.arg9 = arg9;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="searchCarsResponse", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
-    public partial class searchCarsResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public CarClient.CarWS.car[] @return;
-        
-        public searchCarsResponse() {
-        }
-        
-        public searchCarsResponse(CarClient.CarWS.car[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://interfaces.car/")]
-    public partial class customer : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private int idField;
-        
-        private string nameField;
-        
-        private string surnameField;
-        
-        private string mailField;
-        
-        private string passwordField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-                this.RaisePropertyChanged("id");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-                this.RaisePropertyChanged("name");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public string surname {
-            get {
-                return this.surnameField;
-            }
-            set {
-                this.surnameField = value;
-                this.RaisePropertyChanged("surname");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
-        public string mail {
-            get {
-                return this.mailField;
-            }
-            set {
-                this.mailField = value;
-                this.RaisePropertyChanged("mail");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
-        public string password {
-            get {
-                return this.passwordField;
-            }
-            set {
-                this.passwordField = value;
-                this.RaisePropertyChanged("password");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getCustomer", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
-    public partial class getCustomerRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int arg0;
-        
-        public getCustomerRequest() {
-        }
-        
-        public getCustomerRequest(int arg0) {
-            this.arg0 = arg0;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getCustomerResponse", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
-    public partial class getCustomerResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public CarClient.CarWS.customer @return;
-        
-        public getCustomerResponse() {
-        }
-        
-        public getCustomerResponse(CarClient.CarWS.customer @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getCar", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
-    public partial class getCarRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int arg0;
-        
-        public getCarRequest() {
-        }
-        
-        public getCarRequest(int arg0) {
-            this.arg0 = arg0;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getCarResponse", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
-    public partial class getCarResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public CarClient.CarWS.car @return;
-        
-        public getCarResponse() {
-        }
-        
-        public getCarResponse(CarClient.CarWS.car @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="newReservation", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
-    public partial class newReservationRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int arg0;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int arg1;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg2;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=3)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg3;
-        
-        public newReservationRequest() {
-        }
-        
-        public newReservationRequest(int arg0, int arg1, string arg2, string arg3) {
-            this.arg0 = arg0;
-            this.arg1 = arg1;
-            this.arg2 = arg2;
-            this.arg3 = arg3;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="newReservationResponse", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
-    public partial class newReservationResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public bool @return;
-        
-        public newReservationResponse() {
-        }
-        
-        public newReservationResponse(bool @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="addAccount", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
-    public partial class addAccountRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg0;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg1;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg2;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=3)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg3;
-        
-        public addAccountRequest() {
-        }
-        
-        public addAccountRequest(string arg0, string arg1, string arg2, string arg3) {
-            this.arg0 = arg0;
-            this.arg1 = arg1;
-            this.arg2 = arg2;
-            this.arg3 = arg3;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="addAccountResponse", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
-    public partial class addAccountResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public bool @return;
-        
-        public addAccountResponse() {
-        }
-        
-        public addAccountResponse(bool @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="editAccount", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
-    public partial class editAccountRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public CarClient.CarWS.customer arg0;
-        
-        public editAccountRequest() {
-        }
-        
-        public editAccountRequest(CarClient.CarWS.customer arg0) {
-            this.arg0 = arg0;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="editAccountResponse", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
-    public partial class editAccountResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public bool @return;
-        
-        public editAccountResponse() {
-        }
-        
-        public editAccountResponse(bool @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="loginCustomer", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
-    public partial class loginCustomerRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg0;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg1;
-        
-        public loginCustomerRequest() {
-        }
-        
-        public loginCustomerRequest(string arg0, string arg1) {
-            this.arg0 = arg0;
-            this.arg1 = arg1;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="loginCustomerResponse", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
-    public partial class loginCustomerResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public loginCustomerResponse() {
-        }
-        
-        public loginCustomerResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="greet", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
-    public partial class greetRequest {
-        
-        public greetRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="greetResponse", WrapperNamespace="http://interfaces.car/", IsWrapped=true)]
-    public partial class greetResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://interfaces.car/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string @return;
-        
-        public greetResponse() {
-        }
-        
-        public greetResponse(string @return) {
-            this.@return = @return;
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ClientInterfaceChannel : CarClient.CarWS.ClientInterface, System.ServiceModel.IClientChannel {
     }
@@ -1148,6 +1190,112 @@ namespace CarClient.CarWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CarClient.CarWS.greetResponse CarClient.CarWS.ClientInterface.greet(CarClient.CarWS.greetRequest request) {
+            return base.Channel.greet(request);
+        }
+        
+        public string greet() {
+            CarClient.CarWS.greetRequest inValue = new CarClient.CarWS.greetRequest();
+            CarClient.CarWS.greetResponse retVal = ((CarClient.CarWS.ClientInterface)(this)).greet(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CarClient.CarWS.loginCustomerResponse CarClient.CarWS.ClientInterface.loginCustomer(CarClient.CarWS.loginCustomerRequest request) {
+            return base.Channel.loginCustomer(request);
+        }
+        
+        public int loginCustomer(string arg0, string arg1) {
+            CarClient.CarWS.loginCustomerRequest inValue = new CarClient.CarWS.loginCustomerRequest();
+            inValue.arg0 = arg0;
+            inValue.arg1 = arg1;
+            CarClient.CarWS.loginCustomerResponse retVal = ((CarClient.CarWS.ClientInterface)(this)).loginCustomer(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CarClient.CarWS.addAccountResponse CarClient.CarWS.ClientInterface.addAccount(CarClient.CarWS.addAccountRequest request) {
+            return base.Channel.addAccount(request);
+        }
+        
+        public bool addAccount(string arg0, string arg1, string arg2, string arg3) {
+            CarClient.CarWS.addAccountRequest inValue = new CarClient.CarWS.addAccountRequest();
+            inValue.arg0 = arg0;
+            inValue.arg1 = arg1;
+            inValue.arg2 = arg2;
+            inValue.arg3 = arg3;
+            CarClient.CarWS.addAccountResponse retVal = ((CarClient.CarWS.ClientInterface)(this)).addAccount(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CarClient.CarWS.getCustomerResponse CarClient.CarWS.ClientInterface.getCustomer(CarClient.CarWS.getCustomerRequest request) {
+            return base.Channel.getCustomer(request);
+        }
+        
+        public CarClient.CarWS.customer getCustomer(int arg0) {
+            CarClient.CarWS.getCustomerRequest inValue = new CarClient.CarWS.getCustomerRequest();
+            inValue.arg0 = arg0;
+            CarClient.CarWS.getCustomerResponse retVal = ((CarClient.CarWS.ClientInterface)(this)).getCustomer(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CarClient.CarWS.editAccountResponse CarClient.CarWS.ClientInterface.editAccount(CarClient.CarWS.editAccountRequest request) {
+            return base.Channel.editAccount(request);
+        }
+        
+        public bool editAccount(CarClient.CarWS.customer arg0) {
+            CarClient.CarWS.editAccountRequest inValue = new CarClient.CarWS.editAccountRequest();
+            inValue.arg0 = arg0;
+            CarClient.CarWS.editAccountResponse retVal = ((CarClient.CarWS.ClientInterface)(this)).editAccount(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CarClient.CarWS.newReservationResponse CarClient.CarWS.ClientInterface.newReservation(CarClient.CarWS.newReservationRequest request) {
+            return base.Channel.newReservation(request);
+        }
+        
+        public bool newReservation(int arg0, int arg1, string arg2, string arg3) {
+            CarClient.CarWS.newReservationRequest inValue = new CarClient.CarWS.newReservationRequest();
+            inValue.arg0 = arg0;
+            inValue.arg1 = arg1;
+            inValue.arg2 = arg2;
+            inValue.arg3 = arg3;
+            CarClient.CarWS.newReservationResponse retVal = ((CarClient.CarWS.ClientInterface)(this)).newReservation(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CarClient.CarWS.editReservationResponse CarClient.CarWS.ClientInterface.editReservation(CarClient.CarWS.editReservationRequest request) {
+            return base.Channel.editReservation(request);
+        }
+        
+        public bool editReservation(int arg0, int arg1, int arg2, string arg3, string arg4) {
+            CarClient.CarWS.editReservationRequest inValue = new CarClient.CarWS.editReservationRequest();
+            inValue.arg0 = arg0;
+            inValue.arg1 = arg1;
+            inValue.arg2 = arg2;
+            inValue.arg3 = arg3;
+            inValue.arg4 = arg4;
+            CarClient.CarWS.editReservationResponse retVal = ((CarClient.CarWS.ClientInterface)(this)).editReservation(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CarClient.CarWS.getCarResponse CarClient.CarWS.ClientInterface.getCar(CarClient.CarWS.getCarRequest request) {
+            return base.Channel.getCar(request);
+        }
+        
+        public CarClient.CarWS.car getCar(int arg0) {
+            CarClient.CarWS.getCarRequest inValue = new CarClient.CarWS.getCarRequest();
+            inValue.arg0 = arg0;
+            CarClient.CarWS.getCarResponse retVal = ((CarClient.CarWS.ClientInterface)(this)).getCar(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         CarClient.CarWS.downloadCarImageResponse CarClient.CarWS.ClientInterface.downloadCarImage(CarClient.CarWS.downloadCarImageRequest request) {
             return base.Channel.downloadCarImage(request);
         }
@@ -1156,6 +1304,62 @@ namespace CarClient.CarWS {
             CarClient.CarWS.downloadCarImageRequest inValue = new CarClient.CarWS.downloadCarImageRequest();
             inValue.arg0 = arg0;
             CarClient.CarWS.downloadCarImageResponse retVal = ((CarClient.CarWS.ClientInterface)(this)).downloadCarImage(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CarClient.CarWS.searchCarsResponse CarClient.CarWS.ClientInterface.searchCars(CarClient.CarWS.searchCarsRequest request) {
+            return base.Channel.searchCars(request);
+        }
+        
+        public CarClient.CarWS.car[] searchCars(string arg0, string arg1, int arg2, string arg3, int arg4, string arg5, int arg6, string arg7, int arg8, int arg9) {
+            CarClient.CarWS.searchCarsRequest inValue = new CarClient.CarWS.searchCarsRequest();
+            inValue.arg0 = arg0;
+            inValue.arg1 = arg1;
+            inValue.arg2 = arg2;
+            inValue.arg3 = arg3;
+            inValue.arg4 = arg4;
+            inValue.arg5 = arg5;
+            inValue.arg6 = arg6;
+            inValue.arg7 = arg7;
+            inValue.arg8 = arg8;
+            inValue.arg9 = arg9;
+            CarClient.CarWS.searchCarsResponse retVal = ((CarClient.CarWS.ClientInterface)(this)).searchCars(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CarClient.CarWS.getReservationResponse CarClient.CarWS.ClientInterface.getReservation(CarClient.CarWS.getReservationRequest request) {
+            return base.Channel.getReservation(request);
+        }
+        
+        public CarClient.CarWS.reservation getReservation(int arg0) {
+            CarClient.CarWS.getReservationRequest inValue = new CarClient.CarWS.getReservationRequest();
+            inValue.arg0 = arg0;
+            CarClient.CarWS.getReservationResponse retVal = ((CarClient.CarWS.ClientInterface)(this)).getReservation(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CarClient.CarWS.getCarsResponse CarClient.CarWS.ClientInterface.getCars(CarClient.CarWS.getCarsRequest request) {
+            return base.Channel.getCars(request);
+        }
+        
+        public CarClient.CarWS.car[] getCars() {
+            CarClient.CarWS.getCarsRequest inValue = new CarClient.CarWS.getCarsRequest();
+            CarClient.CarWS.getCarsResponse retVal = ((CarClient.CarWS.ClientInterface)(this)).getCars(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CarClient.CarWS.downloadPdfResponse CarClient.CarWS.ClientInterface.downloadPdf(CarClient.CarWS.downloadPdfRequest request) {
+            return base.Channel.downloadPdf(request);
+        }
+        
+        public byte[] downloadPdf(int arg0) {
+            CarClient.CarWS.downloadPdfRequest inValue = new CarClient.CarWS.downloadPdfRequest();
+            inValue.arg0 = arg0;
+            CarClient.CarWS.downloadPdfResponse retVal = ((CarClient.CarWS.ClientInterface)(this)).downloadPdf(inValue);
             return retVal.@return;
         }
         
@@ -1191,156 +1395,6 @@ namespace CarClient.CarWS {
         public bool authenticateCustomer() {
             CarClient.CarWS.authenticateCustomerRequest inValue = new CarClient.CarWS.authenticateCustomerRequest();
             CarClient.CarWS.authenticateCustomerResponse retVal = ((CarClient.CarWS.ClientInterface)(this)).authenticateCustomer(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CarClient.CarWS.getCarsResponse CarClient.CarWS.ClientInterface.getCars(CarClient.CarWS.getCarsRequest request) {
-            return base.Channel.getCars(request);
-        }
-        
-        public CarClient.CarWS.car[] getCars() {
-            CarClient.CarWS.getCarsRequest inValue = new CarClient.CarWS.getCarsRequest();
-            CarClient.CarWS.getCarsResponse retVal = ((CarClient.CarWS.ClientInterface)(this)).getCars(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CarClient.CarWS.getReservationResponse CarClient.CarWS.ClientInterface.getReservation(CarClient.CarWS.getReservationRequest request) {
-            return base.Channel.getReservation(request);
-        }
-        
-        public CarClient.CarWS.reservation getReservation(int arg0) {
-            CarClient.CarWS.getReservationRequest inValue = new CarClient.CarWS.getReservationRequest();
-            inValue.arg0 = arg0;
-            CarClient.CarWS.getReservationResponse retVal = ((CarClient.CarWS.ClientInterface)(this)).getReservation(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CarClient.CarWS.editReservationResponse CarClient.CarWS.ClientInterface.editReservation(CarClient.CarWS.editReservationRequest request) {
-            return base.Channel.editReservation(request);
-        }
-        
-        public bool editReservation(int arg0, int arg1, int arg2, string arg3, string arg4) {
-            CarClient.CarWS.editReservationRequest inValue = new CarClient.CarWS.editReservationRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            inValue.arg4 = arg4;
-            CarClient.CarWS.editReservationResponse retVal = ((CarClient.CarWS.ClientInterface)(this)).editReservation(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CarClient.CarWS.searchCarsResponse CarClient.CarWS.ClientInterface.searchCars(CarClient.CarWS.searchCarsRequest request) {
-            return base.Channel.searchCars(request);
-        }
-        
-        public CarClient.CarWS.car[] searchCars(string arg0, string arg1, int arg2, string arg3, int arg4, string arg5, int arg6, string arg7, int arg8, int arg9) {
-            CarClient.CarWS.searchCarsRequest inValue = new CarClient.CarWS.searchCarsRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            inValue.arg4 = arg4;
-            inValue.arg5 = arg5;
-            inValue.arg6 = arg6;
-            inValue.arg7 = arg7;
-            inValue.arg8 = arg8;
-            inValue.arg9 = arg9;
-            CarClient.CarWS.searchCarsResponse retVal = ((CarClient.CarWS.ClientInterface)(this)).searchCars(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CarClient.CarWS.getCustomerResponse CarClient.CarWS.ClientInterface.getCustomer(CarClient.CarWS.getCustomerRequest request) {
-            return base.Channel.getCustomer(request);
-        }
-        
-        public CarClient.CarWS.customer getCustomer(int arg0) {
-            CarClient.CarWS.getCustomerRequest inValue = new CarClient.CarWS.getCustomerRequest();
-            inValue.arg0 = arg0;
-            CarClient.CarWS.getCustomerResponse retVal = ((CarClient.CarWS.ClientInterface)(this)).getCustomer(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CarClient.CarWS.getCarResponse CarClient.CarWS.ClientInterface.getCar(CarClient.CarWS.getCarRequest request) {
-            return base.Channel.getCar(request);
-        }
-        
-        public CarClient.CarWS.car getCar(int arg0) {
-            CarClient.CarWS.getCarRequest inValue = new CarClient.CarWS.getCarRequest();
-            inValue.arg0 = arg0;
-            CarClient.CarWS.getCarResponse retVal = ((CarClient.CarWS.ClientInterface)(this)).getCar(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CarClient.CarWS.newReservationResponse CarClient.CarWS.ClientInterface.newReservation(CarClient.CarWS.newReservationRequest request) {
-            return base.Channel.newReservation(request);
-        }
-        
-        public bool newReservation(int arg0, int arg1, string arg2, string arg3) {
-            CarClient.CarWS.newReservationRequest inValue = new CarClient.CarWS.newReservationRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            CarClient.CarWS.newReservationResponse retVal = ((CarClient.CarWS.ClientInterface)(this)).newReservation(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CarClient.CarWS.addAccountResponse CarClient.CarWS.ClientInterface.addAccount(CarClient.CarWS.addAccountRequest request) {
-            return base.Channel.addAccount(request);
-        }
-        
-        public bool addAccount(string arg0, string arg1, string arg2, string arg3) {
-            CarClient.CarWS.addAccountRequest inValue = new CarClient.CarWS.addAccountRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            CarClient.CarWS.addAccountResponse retVal = ((CarClient.CarWS.ClientInterface)(this)).addAccount(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CarClient.CarWS.editAccountResponse CarClient.CarWS.ClientInterface.editAccount(CarClient.CarWS.editAccountRequest request) {
-            return base.Channel.editAccount(request);
-        }
-        
-        public bool editAccount(CarClient.CarWS.customer arg0) {
-            CarClient.CarWS.editAccountRequest inValue = new CarClient.CarWS.editAccountRequest();
-            inValue.arg0 = arg0;
-            CarClient.CarWS.editAccountResponse retVal = ((CarClient.CarWS.ClientInterface)(this)).editAccount(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CarClient.CarWS.loginCustomerResponse CarClient.CarWS.ClientInterface.loginCustomer(CarClient.CarWS.loginCustomerRequest request) {
-            return base.Channel.loginCustomer(request);
-        }
-        
-        public int loginCustomer(string arg0, string arg1) {
-            CarClient.CarWS.loginCustomerRequest inValue = new CarClient.CarWS.loginCustomerRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            CarClient.CarWS.loginCustomerResponse retVal = ((CarClient.CarWS.ClientInterface)(this)).loginCustomer(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CarClient.CarWS.greetResponse CarClient.CarWS.ClientInterface.greet(CarClient.CarWS.greetRequest request) {
-            return base.Channel.greet(request);
-        }
-        
-        public string greet() {
-            CarClient.CarWS.greetRequest inValue = new CarClient.CarWS.greetRequest();
-            CarClient.CarWS.greetResponse retVal = ((CarClient.CarWS.ClientInterface)(this)).greet(inValue);
             return retVal.@return;
         }
     }
