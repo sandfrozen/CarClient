@@ -1,0 +1,11 @@
+C:\Users\tomek.buslowski\source\repos\CarClient\CarClient\bin\Debug\CarClient.exe.config
+C:\Users\tomek.buslowski\source\repos\CarClient\CarClient\bin\Debug\CarClient.exe
+C:\Users\tomek.buslowski\source\repos\CarClient\CarClient\bin\Debug\CarClient.pdb
+C:\Users\tomek.buslowski\source\repos\CarClient\CarClient\obj\Debug\CarClient.Form1.resources
+C:\Users\tomek.buslowski\source\repos\CarClient\CarClient\obj\Debug\CarClient.Properties.Resources.resources
+C:\Users\tomek.buslowski\source\repos\CarClient\CarClient\obj\Debug\CarClient.csproj.GenerateResource.cache
+C:\Users\tomek.buslowski\source\repos\CarClient\CarClient\obj\Debug\CarClient.csproj.CoreCompileInputs.cache
+C:\Users\tomek.buslowski\source\repos\CarClient\CarClient\obj\Debug\CarClient.exe
+C:\Users\tomek.buslowski\source\repos\CarClient\CarClient\obj\Debug\CarClient.pdb
+C:\Users\tomek.buslowski\source\repos\CarClient\CarClient\obj\Debug\CarClient.Form2.resources
+C:\Users\tomek.buslowski\source\repos\CarClient\CarClient\obj\Debug\CarClient.csprojResolveAssemblyReference.cache

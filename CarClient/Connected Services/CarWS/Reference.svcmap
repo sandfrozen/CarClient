@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="cf5a1d58-8100-4069-94fa-6a001e15dc0d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://localhost:8181/WSuperCarRent/ClientService?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ClientService.wsdl" MetadataType="Wsdl" ID="8ef6fd6a-b1b2-4132-952d-36ded6409ebd" SourceId="1" SourceUrl="https://localhost:8181/WSuperCarRent/ClientService?wsdl=1" />
+    <MetadataFile FileName="ClientService.xsd" MetadataType="Schema" ID="12eafeff-43bb-480d-9b22-107d88f919ad" SourceId="1" SourceUrl="https://localhost:8181/WSuperCarRent/ClientService?xsd=1" />
+    <MetadataFile FileName="ClientService1.wsdl" MetadataType="Wsdl" ID="7bb36daa-02cc-45a2-aee0-ec0882da334d" SourceId="1" SourceUrl="https://localhost:8181/WSuperCarRent/ClientService?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
